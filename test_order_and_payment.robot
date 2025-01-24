@@ -11,6 +11,8 @@ Test Template    ลูกค้าสั่งซื้อสินค้าส
 *** Variables ***
 ${URL}    https://www.allonline.7eleven.co.th
 ${BROWSER}    chrome
+
+#please fill sensitive information in .env
 ${EMAIL}    %{EMAIL}
 ${PASSWORD}    %{PASSWORD}
 ${USERNAME}    %{USERNAME}
