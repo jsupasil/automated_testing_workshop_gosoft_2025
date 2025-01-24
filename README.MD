@@ -19,7 +19,7 @@ pip install robotframework-seleniumlibrary
  pip install python-dotenv
 ```
 
-Before launching project, you must fill sensitive information in file .env
+Before launching project, you must fill sensitive information in file .env (you can rename file .env.sample to .env too)
 
 ```python
 EMAIL="username@email.com"    # USER EMAIL
