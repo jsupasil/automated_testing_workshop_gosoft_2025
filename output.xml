@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.7 on darwin)" generated="2025-01-24T12:44:18.191295" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Order And Payment" source="/Users/charlie.chuckybear/Documents/gosoft/workshop_gosoft_automated_testing_2025/test_order_and_payment.robot">
+<kw name="เปิดเว็บเบราว์เซอร์และเข้า allonline" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:18.269558" level="INFO">Opening browser 'chrome' to base url 'https://www.allonline.7eleven.co.th'.</msg>
+<arg>url=${URL}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-24T12:44:18.269441" elapsed="5.112041"/>
+</kw>
+<status status="PASS" start="2025-01-24T12:44:18.269170" elapsed="5.114880"/>
+</kw>
+<test id="s1-t1" name="ลูกค้าสั่งซื้ออสินค้าเลือกจัดส่งตามที่อยู่และชำระเงินด้วยบัตรเครดิต" line="20">
+<kw name="เข้าสู่ระบบ" type="SETUP">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[@href='/login/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-24T12:44:23.389386" elapsed="0.083678"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:23.473318" level="INFO">Clicking element 'xpath=//a[@href='/login/']'.</msg>
+<arg>xpath=//a[@href='/login/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:23.473192" elapsed="1.269784"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:24.743401" level="INFO">Typing text 'charlie_chaper@hotmail.com' into text field 'name:email'.</msg>
+<arg>name:email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:24.743189" elapsed="0.090997"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:24.834429" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg time="2025-01-24T12:44:24.845990" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>name:password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:24.834300" elapsed="0.028813"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:24.863335" level="INFO">Clicking element 'xpath=//a[text()="เข้าสู่ระบบ"]'.</msg>
+<arg>xpath=//a[text()="เข้าสู่ระบบ"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:24.863232" elapsed="0.047315"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:login-dropdown</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-24T12:44:24.910661" elapsed="10.287738"/>
+</kw>
+<status status="PASS" start="2025-01-24T12:44:23.388706" elapsed="11.809763"/>
+</kw>
+<kw name="ลูกค้าสั่งซื้อสินค้าสำเร็จ">
+<kw name="เลือกซื้อสินค้า">
+<kw name="ค้นหาสินค้า และตรวจสอบ">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:35.199249" level="INFO">Typing text 'ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม' into text field 'name:q'.</msg>
+<arg>name:q</arg>
+<arg>${ชื่อสินค้า}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:35.199167" elapsed="0.067894"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:35.267403" level="INFO">Sending key(s) ('RETURN',) to name:q element.</msg>
+<msg time="2025-01-24T12:44:35.552331" level="INFO">Pressing special key RETURN to element.</msg>
+<msg time="2025-01-24T12:44:35.552603" level="INFO">Releasing special key RETURN.</msg>
+<arg>name:q</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-01-24T12:44:35.267173" elapsed="8.717294"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:43.994618" level="INFO">Element 'xpath://*[contains(@title, "ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม")]' is displayed.</msg>
+<arg>xpath://*[contains(@title, "${ชื่อสินค้า}")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-24T12:44:43.984652" elapsed="0.010037"/>
+</kw>
+<arg>${ชื่อสินค้า}</arg>
+<status status="PASS" start="2025-01-24T12:44:35.199071" elapsed="8.795681"/>
+</kw>
+<kw name="เลือกสินค้าและระบุใส่จำนวน">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:43.995129" level="INFO">Clicking element 'xpath://*[contains(@title, "ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม")]'.</msg>
+<arg>xpath://*[contains(@title, "${ชื่อสินค้า}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:43.995038" elapsed="4.928736"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:48.937147" level="INFO">Element 'id:title-product' contains text 'ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม'.</msg>
+<arg>id:title-product</arg>
+<arg>${ชื่อสินค้า}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-24T12:44:48.923940" elapsed="0.013266"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:49.163313" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-24T12:44:49.163978" level="FAIL">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.</msg>
+<arg>xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span</arg>
+<arg>${ราคาสินค้า}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="FAIL" start="2025-01-24T12:44:48.937316" elapsed="0.231404">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name:order_count</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-24T12:44:49.168890" elapsed="0.000020"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>name:order_count</arg>
+<arg>${จำนวนสินค้า}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-24T12:44:49.168952" elapsed="0.000009"/>
+</kw>
+<arg>${ชื่อสินค้า}</arg>
+<arg>${จำนวนสินค้า}</arg>
+<arg>${ราคาสินค้า}</arg>
+<status status="FAIL" start="2025-01-24T12:44:43.994856" elapsed="5.174622">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.</status>
+</kw>
+<kw name="เพิ่มลงตะกร้า">
+<arg>${ชื่อสินค้า}</arg>
+<arg>${จำนวนสินค้า}</arg>
+<arg>${ราคาสินค้า}</arg>
+<arg>${ราคารวม}</arg>
+<status status="NOT RUN" start="2025-01-24T12:44:49.169652" elapsed="0.000025"/>
+</kw>
+<kw name="ดำเนินการชำระเงิน">
+<status status="NOT RUN" start="2025-01-24T12:44:49.170138" elapsed="0.000022"/>
+</kw>
+<arg>${ชื่อสินค้า}</arg>
+<arg>${จำนวนสินค้า}</arg>
+<arg>${ราคาสินค้า}</arg>
+<arg>${ราคารวม}</arg>
+<status status="FAIL" start="2025-01-24T12:44:35.198943" elapsed="13.971275">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.</status>
+</kw>
+<kw name="เลือกวิธีจัดส่งสินค้า">
+<arg>${ชื่อลูกค้า}</arg>
+<arg>${นามสกุลลูกค้า}</arg>
+<arg>${โทรศัพท์}</arg>
+<arg>${บ้านเลขที่}</arg>
+<arg>${หมู่}</arg>
+<arg>${จังหวัด}</arg>
+<arg>${อำเภอ}</arg>
+<arg>${ตำบล}</arg>
+<arg>${รหัสไปรษณีย์}</arg>
+<status status="NOT RUN" start="2025-01-24T12:44:49.170277" elapsed="0.000011"/>
+</kw>
+<kw name="เลือกวิธีชำระเงิน">
+<arg>${ชื่อบัตรเครดิต}</arg>
+<arg>${หมายเลขบัตรเครดิต}</arg>
+<arg>${วันหมดอายุ}</arg>
+<arg>${CVV}</arg>
+<arg>${ราคารวม}</arg>
+<arg>${ค่าจัดส่ง}</arg>
+<arg>${ยอดสุทธิ}</arg>
+<arg>${คะแนน}</arg>
+<status status="NOT RUN" start="2025-01-24T12:44:49.170336" elapsed="0.000010"/>
+</kw>
+<arg>ยำยำช้างน้อย รสบาร์บีคิว 120 กรัม</arg>
+<arg>5</arg>
+<arg>32</arg>
+<arg>160</arg>
+<arg>35</arg>
+<arg>195</arg>
+<arg>548</arg>
+<arg>พันกร</arg>
+<arg>ชมจันทร์</arg>
+<arg>0619917765</arg>
+<arg>45/9</arg>
+<arg>7</arg>
+<arg>สมุทรปราการ</arg>
+<arg>บางพลี</arg>
+<arg>บางปลา</arg>
+<arg>10540</arg>
+<arg>พันกรร ชมจันทร์</arg>
+<arg>4624697749177871</arg>
+<arg>01/29</arg>
+<arg>476</arg>
+<status status="FAIL" start="2025-01-24T12:44:35.198718" elapsed="13.971667">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.</status>
+</kw>
+<kw name="ออกจากระบบ" type="TEARDOWN">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:49.172517" level="INFO">Opening url 'https://www.allonline.7eleven.co.th'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-24T12:44:49.171546" elapsed="6.654815"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:55.832361" level="INFO">Clicking element 'id:login-dropdown'.</msg>
+<arg>id:login-dropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-24T12:44:55.831785" elapsed="0.028588"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-24T12:44:55.860636" level="INFO">Clicking element 'xpath://a[contains(text(), "ออกจากระบบ")]'.</msg>
+<msg time="2025-01-24T12:44:56.244870" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-24T12:44:56.245035" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x00000001048fe138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001048f6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x000000010435c7d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x00000001043a1cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000104397470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000104396ec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001043da4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000104395564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x00000001043961b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x00000001048c8fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001048cc2dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x00000001048afe60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x00000001048ccb9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x00000001048a1678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x00000001048e72b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x00000001048e7430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x00000001048f65fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x000000018fbcf2e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x000000018fbca0fc thread_start + 8
+</msg>
+<arg>xpath://a[contains(text(), "ออกจากระบบ")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-24T12:44:55.860515" elapsed="0.385980">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x00000001048fe138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001048f6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x000000010435c7d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x00000001043a1cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000104397470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000104396ec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001043da4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000104395564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x00000001043961b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x00000001048c8fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001048cc2dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x00000001048afe60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x00000001048ccb9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x00000001048a1678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x00000001048e72b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x00000001048e7430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x00000001048f65fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x000000018fbcf2e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x000000018fbca0fc thread_start + 8
+</status>
+</kw>
+<status status="FAIL" start="2025-01-24T12:44:49.170794" elapsed="7.075840">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x00000001048fe138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001048f6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x000000010435c7d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x00000001043a1cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000104397470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000104396ec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001043da4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000104395564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x00000001043961b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x00000001048c8fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001048cc2dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x00000001048afe60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x00000001048ccb9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x00000001048a1678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x00000001048e72b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x00000001048e7430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x00000001048f65fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x000000018fbcf2e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x000000018fbca0fc thread_start + 8
+</status>
+</kw>
+<status status="FAIL" start="2025-01-24T12:44:23.385203" elapsed="32.861763">Element 'xpath=//*[@id="article-form"]/div[2]/span/div/div[1]/span' should have contained text '32' but its text was '฿ 37'.
+
+Also teardown failed:
+ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+0   chromedriver                        0x00000001048fe138 cxxbridge1$str$ptr + 3653888
+1   chromedriver                        0x00000001048f6988 cxxbridge1$str$ptr + 3623248
+2   chromedriver                        0x000000010435c7d8 cxxbridge1$string$len + 88828
+3   chromedriver                        0x00000001043a1cf0 cxxbridge1$string$len + 372756
+4   chromedriver                        0x0000000104397470 cxxbridge1$string$len + 329620
+5   chromedriver                        0x0000000104396ec4 cxxbridge1$string$len + 328168
+6   chromedriver                        0x00000001043da4f0 cxxbridge1$string$len + 604180
+7   chromedriver                        0x0000000104395564 cxxbridge1$string$len + 321672
+8   chromedriver                        0x00000001043961b4 cxxbridge1$string$len + 324824
+9   chromedriver                        0x00000001048c8fc0 cxxbridge1$str$ptr + 3436424
+10  chromedriver                        0x00000001048cc2dc cxxbridge1$str$ptr + 3449508
+11  chromedriver                        0x00000001048afe60 cxxbridge1$str$ptr + 3333672
+12  chromedriver                        0x00000001048ccb9c cxxbridge1$str$ptr + 3451748
+13  chromedriver                        0x00000001048a1678 cxxbridge1$str$ptr + 3274304
+14  chromedriver                        0x00000001048e72b4 cxxbridge1$str$ptr + 3560060
+15  chromedriver                        0x00000001048e7430 cxxbridge1$str$ptr + 3560440
+16  chromedriver                        0x00000001048f65fc cxxbridge1$str$ptr + 3622340
+17  libsystem_pthread.dylib             0x000000018fbcf2e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x000000018fbca0fc thread_start + 8
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-24T12:44:56.247428" elapsed="0.105776"/>
+</kw>
+<status status="FAIL" start="2025-01-24T12:44:18.191743" elapsed="38.161512"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Order And Payment">Test Order And Payment</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
